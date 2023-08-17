@@ -1,5 +1,5 @@
-# compute_canada_sql_demo
-Boilerplate code for logging data to a mysql database
+# Research Boilerplate
+Boilerplate code for mysql database logger, configs and experiment management.
 
 ## How to run
 1. Install mysql connector by running: 
