@@ -1,22 +1,13 @@
-def get_run(arg_dict, run=0):
-    combinations =[]
+import random
 
-    for key in arg_dict.keys():
-        if isinstance(arg_dict[key], list):
-            combinations.append(len(arg_dict[key]))
+import torch
+import numpy as np
 
-    selected_combinations = []
-    for base in combinations:
-        selected_combinations.append(run % base)
-        run = int(run / base)
 
-    counter=0
-    result_dict = {}
-
-    for key in arg_dict.keys():
-        result_dict[key] = arg_dict[key]
-        if isinstance(arg_dict[key], list):
-            result_dict[key] = arg_dict[key][selected_combinations[counter]]
-            counter+=1
-
-    return result_dict
+def set_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    random.seed(seed)
+    np.random.seed(seed)
+    # torch.use_deterministic_algorithms(True) # cba
+    torch.backends.cudnn.deterministic = True

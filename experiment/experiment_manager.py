@@ -1,3 +1,4 @@
+import sys
 import json
 import random
 import time
@@ -10,19 +11,17 @@ class ExperimentManager:
     Class to manage and log experiments to a mysql server
     '''
 
-    def __init__(self, experiment_name, parameters_dict, compute_canada_username):
-        import sys
+    def __init__(self, experiment_name, parameters_dict, compute_canada_username, db_data):
 
-        with open("credentials.json") as f:
-            self.db_data = json.load(f)
+        self.db_data = db_data
 
         self.db_name = compute_canada_username + "_" + experiment_name
         while (True):
             try:
                 conn = mysql.connector.connect(
-                    host=self.db_data['database'][0]["ip"],
-                    user=self.db_data['database'][0]["username"],
-                    password=self.db_data['database'][0]["password"]
+                    host=self.db_data["ip"],
+                    user=self.db_data["username"],
+                    password=self.db_data["password"]
                 )
                 break
             except:
@@ -44,18 +43,14 @@ class ExperimentManager:
         self.run = parameters_dict["run"]
         ret = self.make_table("runs", parameters_dict, ["run"])
         self.insert_value("runs", parameters_dict)
-        # if ret:
-        #     print("Table created")
-        # else:
-        #     print("Table already exists")
 
     def get_connection(self):
         while (True):
             try:
                 conn = mysql.connector.connect(
-                    host=self.db_data['database'][0]["ip"],
-                    user=self.db_data['database'][0]["username"],
-                    password=self.db_data['database'][0]["password"]
+                    host=self.db_data["ip"],
+                    user=self.db_data["username"],
+                    password=self.db_data["password"]
                 )
                 break
             except:
@@ -90,6 +85,7 @@ class ExperimentManager:
             conn.close()
             return True
         except:
+            print("Failed creating table ", table_name, ", perhaps it already exists?")
             conn.close()
             return False
 

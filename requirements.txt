@@ -1,0 +1,7 @@
+mysql-connector-python
+hydra-core
+IPython
+hydra-joblib-launcher
+torch
+numpy
+black

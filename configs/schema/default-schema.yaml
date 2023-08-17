@@ -1,0 +1,14 @@
+errors:
+  columns:
+    run: 0
+    step: 0
+    mse: 0.0
+  primary_keys: [run,step]
+
+summary:
+  columns:
+    run: 0
+    step: 0
+    mse: 0.0
+    time_taken: 0.0
+  primary_keys: [run]
