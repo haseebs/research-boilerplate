@@ -1,11 +1,11 @@
 defaults:
-  - db: gc
+  - db: credentials
   - schema: default-schema
   - override hydra/launcher: joblib
   - _self_
 
-db_prefix: hshah1
-db_name: new_experiment2
+db_prefix: USERNAME_HERE
+db_name: new_experiment123
 
 args:
   run: ???
