@@ -32,7 +32,14 @@ def main(cfg: DictConfig) -> None:
     utils.set_seed(args.seed)
 
     for step in range(0, 100):
-        tables["errors"].add_data([args.run, step, random.random()])
+        tables["errors"].add_data([args.run,
+                                   step,
+                                   random.random(),
+                                   "teest",
+                                   [1,2,3,4],
+                                   {"param1": 1,
+                                    "param2": 3}
+                                   ])
         if not step % 10:
             tables["errors"].commit_to_database()
 

@@ -7,6 +7,8 @@ class Metric:
         self.list_of_data = []
 
     def commit_to_database(self):
+        if len(self.list_of_data) == 0:
+            return
         self.experiment_manager.insert_values(self.table_name, self.keys, self.list_of_data)
         self.list_of_data = []
 

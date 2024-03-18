@@ -1,5 +1,6 @@
 defaults:
   - db: credentials
+  - agent: sac
   - schema: default-schema
   - override hydra/launcher: joblib
   - _self_

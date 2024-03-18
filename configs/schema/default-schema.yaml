@@ -3,6 +3,9 @@ errors:
     run: 0
     step: 0
     mse: 0.0
+    text_example: ""
+    list_example: []
+    dict_example: {}
   primary_keys: [run,step]
 
 summary:
