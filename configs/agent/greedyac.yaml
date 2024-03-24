@@ -1,0 +1,20 @@
+defaults:
+  - actor: gaussian
+  - critic: v_net
+  - buffer: basic_buffer
+  - _self_
+
+name: greedyac
+
+n_actor_updates: 1
+n_action_proposals: 30
+n_action_proposals_selected: 3
+
+test:
+  test1: 0.1
+  test2: 0.5
+
+list:
+  - a
+  - b
+  - c

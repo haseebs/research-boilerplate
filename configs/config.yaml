@@ -1,18 +1,16 @@
 defaults:
   - db: credentials
-  - agent: sac
+  - agent: greedyac
   - schema: default-schema
   - override hydra/launcher: joblib
   - _self_
 
-
-args:
-  run: ???
-  db_prefix: USERNAME_HERE
-  db_name: new_experiment
-  seed: 0
-  epoch: 100
-  step_size: 1e-3
+run: ???
+db_prefix: USERNAME_HERE
+db_name: new_experiment
+seed: 0
+epoch: 100
+step_size: 1e-3
 
 hydra:
   mode: MULTIRUN

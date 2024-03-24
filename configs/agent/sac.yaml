@@ -1,5 +1,0 @@
-optimizer_parameters: 0.9, 0.999, 1e-5
-
-beta_optimizer_init:
-  alpha: 3
-  beta: 10

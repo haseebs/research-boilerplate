@@ -1,0 +1,14 @@
+network: v_net
+
+optimizer: Adam
+lr: 0.05
+weight_decay: 1e-8
+betas: 0.9, 0.999
+eps: 1e-8
+
+hidden_size: 64
+init: xavier_normal
+activation: relu
+
+# other critic params are dynamically inferrred from env
+

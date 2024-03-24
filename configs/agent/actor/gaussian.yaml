@@ -1,0 +1,23 @@
+policy: gaussian
+
+optimizer: Adam
+lr: 0.05
+weight_decay: 1e-8
+betas: 0.9, 0.999
+eps: 1e-8
+
+mean_init: 0
+shape_init: 1
+hidden_size: 128
+activation: relu
+
+test:
+  test1: 0.1
+  test2: 0.5
+
+list:
+  - a
+  - b
+  - c
+
+# other policy params are dynamically inferred from env

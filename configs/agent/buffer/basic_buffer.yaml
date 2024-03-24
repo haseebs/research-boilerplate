@@ -1,0 +1,6 @@
+type: basic
+
+batch_size: 512
+max_replay_steps: 100
+replay_start_step: 1
+
